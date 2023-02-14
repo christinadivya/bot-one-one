@@ -1,0 +1,48 @@
+<div class="login-box">
+  <div class="login-logo">
+    <a href><b>Optisol</b>.business<small>.com</small></a>
+    <a ng-click="goBack()">go back</a>
+  </div><!-- /.login-logo -->
+  <div class="login-box-body">
+    
+    <form>
+    	<div class="form-group errGroup">
+    	</div>
+	    <div ng-class="{'form-group':true, 'has-feedback':true, 'has-error':isErrorReq}">	      	
+	        <input type="text" class="form-control" placeholder="groupname" ng-model="groupname" ng-change="isErrorReq=isErrorNick=false" focus-me="true"/>
+	        <span ng-hide="isErrorNick"class="glyphicon glyphicon-user form-control-feedback"></span>
+	        <span ng-hide="!isErrorNick" class="glyphicon glyphicon-remove form-control-feedback errText"></span>
+	    </div>
+
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="box box-warning direct-chat direct-chat-warning">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Online Members</h3>
+                  </div><!-- /.box-header -->
+                  <div class="box-body">
+                    <!-- Contacts are loaded here -->
+                    <div class="direct-chat-messages ol-members">
+                      <ul class='contacts-list'>
+                        <li ng-repeat="user in users">
+                          <a ng-click="addUsersToGroup(user)">
+                            <img class='contacts-list-img' ng-src='app/css/dist/img/{{user.userAvatar}}'/>
+                            <div class='contacts-list-info'>
+                                <span class="ol-memeber-name" style="line-height:2.6; padding:5px; font-weight : 600; color : #333;">{{ user.username }}</span>
+                            </div><!-- /.contacts-list-info -->
+                          </a>
+                        </li><!-- End Contact Item -->
+                      </ul><!-- /.contatcts-list -->
+                    </div><!--/.direct-chat-messages-->
+                  </div><!-- /.box-body -->
+                </div><!-- /.box -->
+              </div>
+	        <div class="col-sm-2">
+	          <button type="submit" class="btn btn-primary btn-block btn-flat" ng-click="createGroup()">Start</button>
+	        </div><!-- /.col -->
+    	</div><!-- /.row -->
+      </div><!-- /.login-box-body -->
+    </form><!-- / form -->
+  </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->
+

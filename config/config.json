@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "fetch39",
+    "password": "db@dm1n",
+    "database": "fetch39",
+    "host": "52.45.171.205",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "fetch39",
+    "password": "db@dm1n",
+    "database": "fetch39test",
+    "host": "52.45.171.205",
+    "dialect": "mysql"
+  }
+}
+
+ 

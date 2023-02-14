@@ -1,0 +1,41 @@
+version: '2'
+
+services:
+#fetch39-backend compose :-
+  fetch39-backend:
+    image: "optisolbusiness/fetch39:service-production"
+    container_name: "fetch39-backend"
+    # Expose ports [HOST:CONTAINER}
+    ports:
+      - "9001:9001"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "40k"
+        max-file: "20"
+
+#fetch39-chat compose:-
+  fetch39-chat:
+    image: "optisolbusiness/fetch39:chat-production"
+    container_name: "fetch39-chat"
+    # Expose ports [HOST:CONTAINER}
+    ports:
+      - "9002:9002"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "40k"
+        max-file: "20"
+
+#fetch39-admin compose:-
+  fetch39-admin:
+    image: "optisolbusiness/fetch39:admin-production"
+    container_name: "fetch39-admin"
+    # Expose ports [HOST:CONTAINER}
+    ports:
+      - "9003:9003"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "40k"
+        max-file: "20"

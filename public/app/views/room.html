@@ -1,0 +1,25 @@
+<div class="login-box">
+  <div class="login-logo">
+    <a href><b>Optisol</b>.business<small>.com</small></a>
+  </div><!-- /.login-logo -->
+  <div class="login-box-body">
+    
+    <form>
+    	<div class="form-group errGroup">
+    	</div>
+	    <div ng-class="{'form-group':true, 'has-feedback':true, 'has-error':isErrorReq}">	      	
+	        <input type="text" class="form-control" placeholder="roomname" ng-model="roomname" ng-change="isErrorReq=isErrorNick=false" focus-me="true"/>
+	        <span ng-hide="isErrorNick"class="glyphicon glyphicon-user form-control-feedback"></span>
+	        <span ng-hide="!isErrorNick" class="glyphicon glyphicon-remove form-control-feedback errText"></span>
+	    </div>
+
+        <div class="row">
+	        <div class="col-xs-12">
+	          <button type="submit" class="btn btn-primary btn-block btn-flat" ng-click="createRoom()">Start</button>
+	        </div><!-- /.col -->
+    	</div><!-- /.row -->
+      </div><!-- /.login-box-body -->
+    </form><!-- / form -->
+  </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->
+

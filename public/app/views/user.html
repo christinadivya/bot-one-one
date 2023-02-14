@@ -1,0 +1,81 @@
+<!-- Full Width Column -->
+<div class="content-wrapper" style="overflow:hidden;height:100%">
+  <div class="container">
+    <!-- Main content -->
+    <section class="content">                          
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="box box-warning direct-chat direct-chat-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Online Members</h3>
+
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <!-- Contacts are loaded here -->
+
+                  static user1
+                  <a ng-click="replyToChatRequest('Accept')">Accept</a>
+                  <a ng-click="replyToChatRequest('Reject')">Reject</a>
+
+
+                  <a ng-click="joinOneToOneRoom()">JoinRoom</a>
+
+                  <a ng-click="ForwardMessage()">ForwardMessage</a>
+                  <br>
+                  ##############
+                  <a ng-click="removeGroupMembers()">removeGroupMembers</a>
+                  <br>
+                  <a ng-click="addGroupMembers()">addGroupMembers</a>
+
+                  ##############
+                  <a ng-click="sendRequest()">sendRequest</a>
+
+                  ##############
+                  <a ng-click="onlineMembers()">onlineMembers</a>
+
+                  <div class="direct-chat-messages ol-members">
+                    <ul class='contacts-list'>
+                      <li ng-repeat="user in users">
+                        <a ng-click="create1on1Room(user)">
+                          <img class='contacts-list-img' ng-src='app/css/dist/img/{{user.userAvatar}}'/>
+                          <div class='contacts-list-info'>
+                              <span class="ol-memeber-name" style="line-height:2.6; padding:5px; font-weight : 600" ng-class="{colorBlack : !user.highlight, colorSkin : user.highlight}">{{ user.username }}</span>
+                          </div><!-- /.contacts-list-info -->
+                        </a>
+                      </li><!-- End Contact Item -->
+                    </ul><!-- /.contatcts-list -->
+                  </div><!--/.direct-chat-messages-->
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div>
+
+            <div class="col-sm-6">
+              <div class="box box-warning direct-chat direct-chat-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Group Added</h3>
+                  <a ng-click="goToCreateGroup()">Create group</a>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <!-- Contacts are loaded here -->
+                  <div class="direct-chat-messages ol-members">
+                    <ul class='contacts-list'>
+                      <li ng-repeat="group in groups">
+                        <a ng-click="joinGroupRoom(group.groupname)">
+                          
+                          <div class='contacts-list-info'>
+                              <span class="ol-memeber-name" style="line-height:2.6; padding:5px; font-weight : 600;" ng-class="{colorBlack : !group.highlight, colorSkin : group.highlight}">{{ group.groupname }}</span>
+                          </div><!-- /.contacts-list-info -->
+                        </a>
+                      </li><!-- End Contact Item -->
+                    </ul><!-- /.contatcts-list -->
+                  </div><!--/.direct-chat-messages-->
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div>
+     
+      </div>
+    </section><!-- /.content -->
+  </div><!-- /.container -->
+</div><!-- /.content-wrapper -->
+
+

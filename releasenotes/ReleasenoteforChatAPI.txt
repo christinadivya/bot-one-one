@@ -1,0 +1,22 @@
+Build request No: 82
+
+
+1) Install Node.js v8.11.2 x64 
+2) Install URL Rewrite extension
+3) Install iisnode v0.2.21 x64
+4) Create a directory for Node ConverseChatAPI in Quality server in below mentioned path
+  	Path Name: \\172.31.61.213\Converse\ConverseChatAPI . 
+5) Copy all the files except node_modules from TFS to Quality server.
+6) create folder ConverseChatAPI in C:\Program Files\iisnode\www\ in 172.31.61.213 servers.
+6) Copy iiserver.js and web.config files from C:\Program Files\iisnode\www\ConverseChatAPI in 172.31.60.14 server and paste in the C:\Program Files\iisnode\www\ConverseChatAPI of 172.31.61.213 server
+7) change the path in iisserver.js from D:\\lnt_api_services\\Converse\\ConverseChatAPI to respective drivers path (E:\\lnt_api_services\\Converse\\ConverseChatAPI) of 172.31.61.213 where node application is hosted.
+8) In Node/config/Configuration.js file, Update 
+  a) converseBaseUrl = "http://devservices.lntecc.com/" to corresponding server base url
+  b) erpBaseUrl = "http://eipdev.lntecc.com/"; to corresponding server base url
+  c) connectionString = "Server=eipdevdb;Database=Converse; Trusted_Connection=yes;" to "Server=eipqlty;Database=Converse; Trusted_Connection=yes;" 
+  d) uploadURL = http://moss2013-dev/Converse/api/SPDU/GetSPDUData to http://appqltydocs.lntecc.com//Converse/api/SPDU/GetSPDUData
+9)Enable permission to write files on converseFiles
+  1. Path Name: \\172.31.60.14\lnt_api_services\Converse\ConverseFiles
+  2. Go ChatDocs, Right click choose properties->security
+  3. Edit and give full controll for IIS_IUSR
+  4. Do the same inside ChatImage and ConverseImage folders
